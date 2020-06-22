@@ -114,7 +114,7 @@
                   <li><a href="services.html"> Products</a></li> 
                   <li><a href="#.html"> industries</a></li> 
                   <li><a href="#.html"> Career</a></li> 
-                  <li class="last"><a class="active" href="#.html"> Contact Us</a></li> 
+                  <li class="last"><a class="active" href="contact.html"> Contact Us</a></li> 
                 </ul> 
               </div> </nav><!-- end nav menu -->
       
@@ -134,19 +134,6 @@
   
   
   <div class="clearfix"></div> 
-  <div class="page_title"> 
-    <div class="container"> 
-      <div class="title"><h1>Contact Us</h1> 
-      </div> 
-      <div class="pagenation">&nbsp;<a href="index-2.html">Home</a> <i>/</i> Contact Us
-      
-      
-      
-      
-      
-      </div> 
-    </div> 
-  </div><!-- end page title --> 
 
 
 <!-- Contant
@@ -160,66 +147,23 @@
   
 	<!--- Register Form Start -->
 	<div class="content_fullwidth">
-		<h1>Enquiry Form</h1>
-		
-		<button type="submit" class="loginbtn" onclick="login()">Login</button>
-		
-		<label for="name"><b>Name</b></label>
-		<input type="text" placeholder="Enter Name" name="name" id="name" required>
-		<p class="perror" id="nameerror"></p>
+		<h1>Sign Up</h1>
+		<label for="username"><b>UserName</b></label>
+		<input type="text" placeholder="Enter Email" name="username" id="username" required>
+		<p class="perror" id="usererr"></p>
 
-		<label for="phonenumber"><b>Phone Number</b></label>
-		<input type="text" placeholder="Enter Phone Number" name="phonenumber" id="phonenumber" required>
-		<p class="perror" id="phoneerror"></p>
+		<label for="psw"><b>Password</b></label>
+		<input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+		<p class="perror" id="pwderr"></p>
 
-
-		<label for="email"><b>Email</b></label>
-		<input type="text" placeholder="Enter Email" name="email" id="email" required>
-		<p class="perror" id="emailerror"></p>
-		
-		<label for="msg"><b>Message</b></label>
-		<input type="text" placeholder="Enter Message" name="msg" id="msg" required>
-		
-		<label for="enquirytype"><b>Enquiry Type</b></label>
-		<select name="enquirytype" id="enquirytype" required>
-		  <option value="">Select Enquiry</option>
-		  <option value="General">General</option>
-		  <option value="Sales">Sales</option>
-		  <option value="System Issue">System Issue</option>
-		  <option value="Others">Others</option>
-		</select> 
-		<p class="perror" id="enquiryerror"></p>
-		
-		<label for="country"><b>Country</b></label>
-		<select name="country" id="country" required>
-		  <option value="">Select Country</option>
-		  <option value="Malaysia">Malaysia</option>
-		  <option value="Indonesia">Indonesia</option>
-		  <option value="Others">Others</option>
-		</select> 
-		
-		<button type="submit" class="registerbtn" onclick="register()">Register</button>
+	  <div class="clearfix">
+		<button type="button" onclick="cancel()" class="cancelbtn">Cancel</button>
+		<button type="submit" class="signupbtn" onclick="signUp()">Sign Up</button>
 	  </div>
+	 </div>
 	<!--- Register Form End -->
 	
-	<div class="content_fullwidth"> 	
-      <div class="one_half"> 
-        <p>Feel free to talk to our online representative at any time you please using our E-mail system on our website or one of the below instant messaging programs.</p> <br /> 
-        <p>Please be patient while waiting for response. (24/7 Support!)
-    <strong>Phone General Inquiries: (021) 5292 2285</strong></p> <br /> <h3><i>Find the Address</i></h3> <iframe width="600" height="445" frameborder="0" allowfullscreen="" style="border: 0px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.21692874765!2d106.81818641453806!3d-6.2351110627942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e0f7454fbf%3A0xeeb9480e11b28a0a!2sGEDUNG+TIFA!5e0!3m2!1sen!2sid!4v1448323108926"></iframe><br /><small><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.21692874765!2d106.81818641453806!3d-6.2351110627942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e0f7454fbf%3A0xeeb9480e11b28a0a!2sGEDUNG+TIFA!5e0!3m2!1sen!2sid!4v1448323108926"></a></small> 
-      </div> 
-      <div class="one_half last"> <h3><i>Address Info</i></h3> <h4>PT . Neotural Era Graha:</h4> 
-        <div class="address-info"> 
-          <ul> 
-            <li> <strong>NRG Indonesia</strong><br />                Gedung TIFA Lantai 2 Unit 3 Jalan Kuningan Barat No. 26,12710 Jakarta Selatan<br />                Telephone: (021) 5292 2285<br /> </li> <br /> <br /> 
-            <li> <strong>NRG Malaysia</strong><br />TKS Business Centre, Suite 10-3A, WISMA TKSS, 206, Jalan Segambut, 51200 Kuala Lumpur<br />                Telephone: 603-6258 5877 * 2/3<br /> </li> <br /> <br /> 
-            <li> <strong>NRG India</strong><br />                37,Victoria Press Road,SF Building,Nagercoil-629 001<br />                Telephone: +91 4652 403986<br /> </li> <br /> 
-            <li> <strong>NRG UAE</strong><br />Po Box : 514650,Sharjah,UAE-25793<br />                Telephone: +971 52591 1172 </li> <br /> <br /> 
-            <li>				E-mail: contactus<a href="mailto:contactus@neotural.com">@neotural.com</a><br />                Website: <a href="index-2.html">www.neotural.com</a> </li> 
-          </ul> 
-        </div> 
-      </div> 
-    </div> 
+	
   </div><!-- end content area -->
   
   
