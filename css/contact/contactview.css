@@ -1,0 +1,94 @@
+p {
+	color: red bold;
+	text-shadow:none;
+	font-size: 10px;
+}
+.w3-card-8
+{
+	z-index:1;
+	 overflow:auto;
+	 -webkit-overflow-scrolling:touch;
+}
+.ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head+body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head+body .ui-btn.ui-btn-a:visited {
+    background-color: #f6f6f6;
+   
+    color: #333;
+    text-shadow: 0 1px 0 #f3f3f3;
+    border-radius: 0px !important;
+	<!-- border-color:#add8e6 !important; -->
+}
+.ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head+body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head+body .ui-btn.ui-btn-a:visited {
+    background-color: #f6f6f6;
+   
+    color: #333;
+    text-shadow: 0 1px 0 #f3f3f3;
+    border-radius: 0px !important;
+ <!-- border-color:#add8e6 !important; -->
+}
+ul ul, ol ul, ul ol, ol ol {
+  margin-top:2px !important;
+  margin-bottom: 10px;; 
+  background-color: #ffffff !important;
+  list-style-type: none !important;
+  font-size:12px !important;
+  font-family:"Comic Sans MS" !important;
+}
+ul#mytable li#iddd
+{
+ 
+ color:#009688  !important;
+ font-weight:800;
+ font-size:12px !important;
+ <!-- font-family:book antiqua bold!important; -->
+}
+#mytable
+{
+ overflow-x:none !important;
+}
+ul#mytable li
+{
+ margin-top:2px !important;
+ color:#000000 !important;
+ font-weight:600;
+ font-size:12px !important;
+}
+ul#mytable li#iddddd
+{
+ background-color:#627aac !important;
+ text-align:center;
+ margin-left: -40px;
+}
+
+#mytable {
+   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+	text-shadow:none;
+	
+}
+#mytable td, #mytable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+/* #Barrowtable tr:nth-child(even){background-color: #f2f2f2;} */
+
+#mytable tr:hover {background-color: #dfe3ee;}
+
+#mytable th {
+     padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3b5998;
+    color: #ffffff !important;
+	font-size:12px;
+	font-family:book antiqua !important;
+	font-weight:700 !important;
+	border-color:#3b5998;
+}
+#mytable td
+{
+	font-size:10px;
+	background-color:#c4dff6;
+	font-family:book antiqua !important;
+	color:black !important;
+}

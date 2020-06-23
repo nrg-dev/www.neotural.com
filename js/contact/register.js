@@ -72,34 +72,34 @@ function register(){
 		$("#email").css("border-color","red");
 		emailflag=true;
 	}
-	
-	if(nameflag==true && enquirytype==true){
-	
-		var myData = new Object();
-		var myData = JSON.stringify({
-			"name" : name,
-			"phonenumber" : phonenumber,
-			"email" : email,
-			"msg" : msg,
-			"enquirytype" : enquirytype,
-			"country" : country
-		});
-		var url="http://localhost:8095/erp/saveEnquiry";
-		$.ajax({
-			url: url,
-			cache: true,
-			method: 'POST',
-			data:myData,
-			dataType: "json",
-			async: true,
-			contentType: "application/json; charset=utf-8",
-			success: function(json) {
-				$('.content_fullwidth').find("input[type=text],input[type=number], select ").val("");
-				alert("Thank You for giving enquiry.We will revert you wiithin 24 hours.");
-			}
-		});
-		console.log("Called Successfully :::::::::::::::::::::::::::::");	
+		
+	var enquiryData = {
+		"name" : name,
+		"phonenumber" : phonenumber,
+		"email" : email,
+		"msg" : msg,
+		"enquirytype" : enquirytype,
+		"country" : country
 	}
+	var myData = JSON.stringify(enquiryData);
+	var url="http://localhost:8095/erp/enquiry/saveEnquiry";
+
+	$.ajax({
+		type: "POST",
+		contentType : 'application/json; charset=utf-8',
+		dataType : 'json',
+		url: url,
+		data: myData,
+		success: function(json) {
+			$('.content_fullwidth').find("input[type=text],input[type=number], select,textarea ").val("");
+			$('#nameerror').html("");
+			$('#enquiryerror').html("");
+			$('#phoneerror').html("");
+			$('#emailerror').html("");
+			alert("Thank You for giving enquiry.We will revert you wiithin 24 hours.");
+		}
+	});
+	console.log("Called Successfully :::::::::::::::::::::::::::::");	
 }
 
 function login(){

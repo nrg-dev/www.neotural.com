@@ -1,26 +1,32 @@
-function loadEnquiry(){
-	var url="http://localhost:8095/erp/loadEnquiry";
+$(document).ready(function(){
+    alert("loadEnq");
+	$('#enqviewtable ul').empty();
+	var urll ="http://localhost:8095/erp/loadEnquiry";
 	$.ajax({
-		dataType: "json",
-		url: url,
-		method: 'GET',
-		success: function(json) {
-			$('#enquiryview').empty();
-			console.log(json);
-			if(json.length == 0){
-				alert('No Data for Information.');
-			}else{
+        dataType: "json",
+        url: url,
+        cache: false,
+        method: 'GET',
+        success: function(json) {
+			if(json.length>0){
+				$('#mydiv').show();  
+				$('#nodata').hide();  
 				for (var i = 0; i < json.length; i++) {
-					tr = $('<tr class="w3-card-8">');
-					tr.append('<td>' + json[i].name+ '</td>');
-					tr.append('<td>' + json[i].phonenumber+ '</td>');
-					tr.append('<td>' + json[i].email_ID+ '</td>');
-					tr.append('<td>' + json[i].message+ '</td>');
-					tr.append('<td>' + json[i].enquirytype+ '</td>');
-					tr.append('<td>' + json[i].country+ '</td>');
-					$("#enquiryview").append(tr);
-				} 
+					ul = $('<ul/>');
+					ul.append("<li>" + json[i].name + "</li>");
+					ul.append("<li>" + json[i].phonenumber+ "</li>");
+					ul.append("<li>" + json[i].email_ID + "</li>");
+					ul.append("<li>" + json[i].message + "</li>");
+					ul.append("<li>" + json[i].enquirytype + "</li>");
+					ul.append("<li>" + json[i].country+ "</li>");
+					$("#enqviewtable").append(ul);
+				}
+			}
+			else
+			{
+				$('#nodata').show();  
+				$('#mydiv').hide();  
 			}
 		}
 	});
-} 
+ });

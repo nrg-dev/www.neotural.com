@@ -37,7 +37,7 @@
     
     <!-- responsive devices styles -->
 	<link rel="stylesheet" media="screen" href="css/responsive-leyouts.css" type="text/css" />
-	<link rel="stylesheet" href="css/contactview.css">
+	<link rel="stylesheet" href="css/contact/contactview.css">
     
 <!-- just remove the below comments witch color skin you want to use -->
     <!--<link rel="stylesheet" href="css/colors/orange.css" />-->
@@ -147,17 +147,28 @@
   
 	<!--- Register Form Start -->
 	<div class="content_fullwidth">
-		<table id="myTable">
-		  <tr class="header">
-			<th>Name</th>
-			<th>Phone Number</th>
-			<th>Email</th>
-			<th>Message</th>
-			<th>Enquiry Type</th>
-			<th>Country</th>
-		  </tr>
-		  <tr data-role="listview" data-inset="true" id="enquiryview" class="w3-card-8" data-input="#filterTable-input" data-filter="true" > </tr>
-		</table>
+		<div id="mydiv">
+			<table id="mytable">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Phone Number</th>
+						<th>Email ID</th>
+						<th>Message</th>
+						<th>Enquiry Type</th>
+						<th>Country</th>
+					</tr>
+				</thead>
+				<tbody id="enqviewtable" class="ui-responsive ui-shadow">
+				
+				</tbody>
+			</table>
+		</div>
+		<div id="nodata">
+			<center>
+				<p style="color: red; font-size: 16px">No Records Found</p>
+			</center>
+		</div>
 	 </div>
 	<!--- Register Form End -->
 	
@@ -319,6 +330,39 @@
         });
  
     });
+</script> 
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#enqviewtable').empty();
+	var urll ="http://localhost:8095/erp/enquiry/loadEnquiry";
+	$.ajax({
+        dataType: "json",
+        url: urll,
+        cache: false,
+        method: 'GET',
+        success: function(json) {
+			if(json.length>0){
+				$('#mydiv').show();  
+				$('#nodata').hide();  
+				for (var i = 0; i < json.length; i++) {
+					tr = $('<tr/>');
+					tr.append("<td>" + json[i].name + "</td>");
+					tr.append("<td>" + json[i].phonenumber+ "</td>");
+					tr.append("<td>" + json[i].email_ID + "</td>");
+					tr.append("<td>" + json[i].message + "</td>");
+					tr.append("<td>" + json[i].enquirytype + "</td>");
+					tr.append("<td>" + json[i].country+ "</td>");
+					$("#enqviewtable").append(tr);
+				}
+			}
+			else
+			{
+				$('#nodata').show();  
+				$('#mydiv').hide();  
+			}
+		}
+	}); 
+ });
 </script> 
 <script type="text/javascript" src="spaw/empty/js/sticky-menu/core.html">
 </script> </body>

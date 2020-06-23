@@ -37,7 +37,7 @@
     
     <!-- responsive devices styles -->
 	<link rel="stylesheet" media="screen" href="css/responsive-leyouts.css" type="text/css" />
-	<link rel="stylesheet" href="css/contact.css">
+	<link rel="stylesheet" href="css/contact/contact.css">
     
 <!-- just remove the below comments witch color skin you want to use -->
     <!--<link rel="stylesheet" href="css/colors/orange.css" />-->
@@ -162,7 +162,7 @@
 	<div class="content_fullwidth">
 		<h1>Enquiry Form</h1>
 		
-		<button type="submit" class="loginbtn" onclick="login()">Login</button>
+		<!-- <button type="submit" class="loginbtn" onclick="login()">Login</button> -->
 		
 		<label for="name"><b>Name</b></label>
 		<input type="text" placeholder="Enter Name" name="name" id="name" required>
@@ -178,7 +178,7 @@
 		<p class="perror" id="emailerror"></p>
 		
 		<label for="msg"><b>Message</b></label>
-		<input type="text" placeholder="Enter Message" name="msg" id="msg" required>
+		<textarea type="text" placeholder="Enter Message" name="msg" id="msg"></textarea>
 		
 		<label for="enquirytype"><b>Enquiry Type</b></label>
 		<select name="enquirytype" id="enquirytype" required>
