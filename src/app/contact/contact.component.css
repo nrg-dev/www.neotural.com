@@ -1,0 +1,138 @@
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+input[type=text], input[type=password],select,textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 0px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus, select:focus, textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0px;
+  border: none;
+  margin-top: 25px;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+.loginbtn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 0px;
+	border: none;
+	cursor: pointer;
+	width: 10%;
+	opacity: 0.9;
+	float: right;
+	margin-top: -55px;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+/* .ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; 
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; 
+} */
+
+.form-control{
+  margin-top: 15px;
+}
+
+.spanerror{
+	font-size:13px;
+	color:red;
+	margin: -20px 0px 10px 0px;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  background-color: #f44336;
+  color: white;
+  float: left;
+  width: 10%;
+  margin-right: 15px;
+}
+
+.signupbtn {
+	background-color: #4CAF50;
+	color: white;
+	float: left;
+	width: 10%;
+	margin-right: 15px;
+}
+
+.modal-dialog {
+  -webkit-transform: translate(0,-50%);
+  -o-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  top: 20%;
+  margin: 0 auto;
+}
+.modal-header{
+  background-color:rgb(48, 105, 171);
+  height: 50px;
+}
+.modal-content {
+  overflow:hidden;
+}
+
+.modal-title{
+  color:white;
+}	
+
+.success {
+  color:#fff;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color:rgb(48, 105, 171);
+  border-color: rgb(48, 105, 171);
+}
+
+.alert-success{
+  background: #b1eab1;
+  padding: 15px;
+  color: green;
+  margin-bottom: 15px;
+}
+
+.alert-error{
+  background: #eabebe;
+  padding: 15px;
+  color: darkred;
+  margin-bottom: 15px;
+}

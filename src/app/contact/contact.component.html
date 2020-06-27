@@ -1,0 +1,135 @@
+<app-detailsheader></app-detailsheader>
+<div class="clearfix"></div> 
+  <div class="page_title"> 
+    <div class="container"> 
+      <div class="title"><h1>Contact Us</h1> 
+      </div> 
+      <div class="pagenation">&nbsp;<a [routerLink]="['/home']">Home</a> <i>/</i> Contact Us </div> 
+    </div> 
+</div><!-- end page title --> 
+
+<div class="container"> 
+  
+	<!--- Register Form Start -->
+	<div class="content_fullwidth">
+        <form name="enquiryForm" (ngSubmit)="enquiryForm.form.valid && saveEnquiry()"
+            #enquiryForm="ngForm" novalidate>
+            <h1>Enquiry Form</h1>
+            
+            <div class="row" *ngIf="showMsg">
+                <div class="col-xs-12">
+                    <p class="alert alert-success">
+                        Thank You for giving enquiry.We will revert you wiithin 24 hours.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="showerrorMsg">
+                <div class="col-xs-12">
+                    <p class="alert alert-error">
+                        Network Issue.
+                    </p>
+                </div>
+            </div>
+
+            <!-- <button type="submit" class="loginbtn" (click)="login()">Login</button> -->
+            <div>
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Enter Name" name="name" [(ngModel)]="this.model.name" 
+                    #name="ngModel" autocomplete="off" required>
+                <div *ngIf="name.errors && (name.dirty || name.touched) ||
+                    (enquiryForm.submitted && !name.valid )">
+                    <span [hidden]="!name.errors.required" class="spanerror">
+                        Required field cannot be left blank
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label for="phonenumber"><b>Phone Number</b></label>
+                <input type="text" placeholder="Enter Phone Number" name="phonenumber" id="phonenumber" [(ngModel)]="this.model.phonenumber" 
+                    #phonenumber="ngModel" autocomplete="off" (ngModelChange)="getValidation()" required>
+                <div *ngIf="phonenumberoremail">
+                    <span class="spanerror">
+                        PhoneNumber or Email is required
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label for="email_ID"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email_ID" id="email_ID" [(ngModel)]="this.model.email_ID" 
+                    #email_ID="ngModel" autocomplete="off" (ngModelChange)="getValidation()" required>
+                <div *ngIf="phonenumberoremail">
+                    <span class="spanerror">
+                        PhoneNumber or Email is required
+                    </span>
+                </div>
+            </div>
+            
+            <div class="form-control">
+                <label for="message"><b>Message</b></label>
+                <textarea type="text" placeholder="Enter Message" name="message" id="message" [(ngModel)]="this.model.message" 
+                #message="ngModel" autocomplete="off"></textarea>
+            </div>
+            
+            <div class="form-control">
+                <label for="enquirytype"><b>Enquiry Type</b></label>
+                <select name="enquirytype" id="enquirytype" [(ngModel)]="this.model.enquirytype" 
+                    #enquirytype="ngModel" autocomplete="off" required>
+                    <option value="">Select Enquiry</option>
+                    <option value="General">General</option>
+                    <option value="Sales">Sales</option>
+                    <option value="System Issue">System Issue</option>
+                    <option value="Others">Others</option>
+                </select> 
+                <div *ngIf="enquirytype.errors && (enquirytype.dirty || enquirytype.touched) ||
+                    (enquiryForm.submitted && !enquirytype.valid )">
+                    <span [hidden]="!enquirytype.errors.required" class="spanerror">
+                        Required field cannot be left blank
+                    </span>
+                </div>
+            </div>
+            
+            <div class="form-control">
+                <label for="country"><b>Country</b></label>
+                <select name="country" id="country"  [(ngModel)]="this.model.country" 
+                    #country="ngModel" autocomplete="off">
+                    <option value="">Select Country</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Others">Others</option>
+                </select> 
+            </div>
+            
+            <button type="submit" class="registerbtn" (click)="saveEnquiry()">Register</button>
+        </form>
+	</div>
+	<!--- Register Form End -->
+	
+	<div class="content_fullwidth"> 	
+        <div class="one_half"> 
+            <p>Feel free to talk to our online representative at any time you please using our E-mail system on our website or one of the below instant messaging programs.</p> <br /> 
+            <p>Please be patient while waiting for response. (24/7 Support!)
+            <strong>Phone General Inquiries: (021) 5292 2285</strong></p> <br /> <h3><i>Find the Address</i></h3> <iframe width="600" height="445" frameborder="0" allowfullscreen="" style="border: 0px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.21692874765!2d106.81818641453806!3d-6.2351110627942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e0f7454fbf%3A0xeeb9480e11b28a0a!2sGEDUNG+TIFA!5e0!3m2!1sen!2sid!4v1448323108926"></iframe><br /><small><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.21692874765!2d106.81818641453806!3d-6.2351110627942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e0f7454fbf%3A0xeeb9480e11b28a0a!2sGEDUNG+TIFA!5e0!3m2!1sen!2sid!4v1448323108926"></a></small> 
+        </div> 
+        <div class="one_half last"> <h3><i>Address Info</i></h3> <h4>PT . Neotural Era Graha:</h4> 
+            <div class="address-info"> 
+                <ul> 
+                    <li> <strong>NRG Indonesia</strong><br />                Gedung TIFA Lantai 2 Unit 3 Jalan Kuningan Barat No. 26,12710 Jakarta Selatan<br />                Telephone: (021) 5292 2285<br /> </li> <br /> <br /> 
+                    <li> <strong>NRG Malaysia</strong><br />TKS Business Centre, Suite 10-3A, WISMA TKSS, 206, Jalan Segambut, 51200 Kuala Lumpur<br />                Telephone: 603-6258 5877 * 2/3<br /> </li> <br /> <br /> 
+                    <li> <strong>NRG India</strong><br />                37,Victoria Press Road,SF Building,Nagercoil-629 001<br />                Telephone: +91 4652 403986<br /> </li> <br /> 
+                    <li> <strong>NRG UAE</strong><br />Po Box : 514650,Sharjah,UAE-25793<br />                Telephone: +971 52591 1172 </li> <br /> <br /> 
+                    <li>				E-mail: contactus<a href="mailto:contactus@neotural.com">@neotural.com</a><br />                Website: <a [routerLink]="['/home']">www.neotural.com</a> </li> 
+                </ul> 
+            </div> 
+        </div> 
+    </div> 
+</div>
+<!-- end content area -->
+
+<div class="clearfix mar_top4"></div>
+
+<!-- Footer Calling -->
+<app-footer></app-footer>
+

@@ -1,0 +1,9 @@
+.a-class{
+    float: right;
+    font-size: 16px;
+    color: cornflowerblue;
+}
+
+.a-class:hover {
+    color: cornflowerblue;
+}

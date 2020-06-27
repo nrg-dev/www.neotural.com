@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<div class="clearfix"></div> 
+<div class="container"> 
+	<!--- Register Form Start -->
+	<div class="content_fullwidth">
+        <form name="enquiryloginForm" (ngSubmit)="enquiryloginForm.form.valid && enquiryLogin()"
+            #enquiryloginForm="ngForm" novalidate>
+            <h1>Back Office Login</h1>
+
+            <div>
+                <label for="username"><b>UserName</b></label>
+                <input type="text" placeholder="Enter Email" name="username" id="username" [(ngModel)]="this.model.username" 
+                #username="ngModel" autocomplete="off" required>
+                <div *ngIf="username.errors && (username.dirty || username.touched) ||
+                    (enquiryloginForm.submitted && !username.valid )">
+                    <span [hidden]="!username.errors.required" class="spanerror">
+                        Required field cannot be left blank
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" id="password" [(ngModel)]="this.model.password" 
+                    #password="ngModel" autocomplete="off" required>
+                <div *ngIf="password.errors && (password.dirty || password.touched) ||
+                    (enquiryloginForm.submitted && !password.valid )">
+                    <span [hidden]="!password.errors.required" class="spanerror">
+                        Required field cannot be left blank
+                    </span>
+                </div>
+
+                <div *ngIf="usernamepasserror">
+                    <span class="spanerror">
+                        UserName and password not matched.
+                    </span>
+                </div>
+            </div>
+
+            <div class="clearfix">
+                <button type="submit" class="signupbtn">Login</button>
+                <!-- <button type="button" onclick="cancel()" class="cancelbtn">Cancel</button> -->
+            </div>
+        </form>
+	</div>
+	<!--- Register Form End -->
+	
+	
+</div><!-- end content area -->
+  
+<div class="clearfix mar_top5"></div>

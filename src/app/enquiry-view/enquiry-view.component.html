@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<div class="clearfix"></div> 
+<div class="container"> 
+    <!--- Register Form Start -->
+    <div class="content_fullwidth">
+        <div id="mydiv">
+            <table id="mytable" *ngIf="enquiryTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Email ID</th>
+                        <th>Message</th>
+                        <th>Enquiry Type</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let elist of enquiryList; let i = index">
+                        <td>{{elist.name}}</td>
+                        <td>{{elist.phonenumber}}</td>
+                        <td>{{elist.email_ID}}</td>
+                        <td>{{elist.message}}</td>
+                        <td>{{elist.enquirytype}}</td>
+                        <td>{{elist.country}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div *ngIf="nodata">
+            <p style="color: red; font-size: 16px;text-align: center;">No Records Found</p>
+        </div>
+    </div>
+    <!--- Register Form End -->
+</div>
+

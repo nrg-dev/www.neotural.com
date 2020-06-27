@@ -1,0 +1,52 @@
+#mydiv {
+    margin-bottom: 50px;
+}
+
+p {
+	color: red bold;
+	text-shadow:none;
+	font-size: 10px;
+}
+.w3-card-8
+{
+	z-index:1;
+	overflow:auto;
+	-webkit-overflow-scrolling:touch;
+}
+#mytable
+{
+ overflow-x:none !important;
+}
+
+#mytable {
+   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+	text-shadow:none;
+}
+#mytable td, #mytable th {
+    border: 1px solid grey;
+    padding: 8px;
+}
+/* #Barrowtable tr:nth-child(even){background-color: #f2f2f2;} */
+
+#mytable tr:hover {background-color: #dfe3ee;}
+
+#mytable th {
+     padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3b5998;
+    color: #ffffff !important;
+	font-size:14px;
+	font-family:book antiqua !important;
+	font-weight:700 !important;
+	border-color:#3b5998;
+}
+#mytable td
+{
+	font-size:13px;
+	background-color:#c4dff6;
+	font-family:book antiqua !important;
+	color:black !important;
+}

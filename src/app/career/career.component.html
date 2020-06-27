@@ -1,0 +1,80 @@
+<app-detailsheader></app-detailsheader>
+
+<div class="clearfix"></div> 
+  <div class="page_title"> 
+    <div class="container"> 
+      <div class="title"><h1>Career</h1> 
+      </div> 
+      <div class="pagenation">&nbsp;<a [routerLink]="['/home']">Home</a> <i>/</i> Career </div> 
+    </div> 
+</div><!-- end page title --> 
+
+<div class="container"> 
+  
+	<!--- Register Form Start -->
+	<div class="content_fullwidth">
+        <form name="careerForm" (ngSubmit)="careerForm.form.valid && saveCareer()"
+            #careerForm="ngForm" novalidate>
+            <h1>Enquiry Form</h1>
+            
+            <div class="row" *ngIf="showMsg">
+                <div class="col-xs-12">
+                    <p class="alert alert-success">
+                        Thank You for giving enquiry.We will revert you wiithin 24 hours.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="showerrorMsg">
+                <div class="col-xs-12">
+                    <p class="alert alert-error">
+                        Network Issue.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Enter Name" name="name" [(ngModel)]="this.model.name" 
+                    #name="ngModel" autocomplete="off" required>
+                <div *ngIf="name.errors && (name.dirty || name.touched) ||
+                    (careerForm.submitted && !name.valid )">
+                    <span [hidden]="!name.errors.required" class="spanerror">
+                        Required field cannot be left blank
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label for="phonenumber"><b>Phone Number</b></label>
+                <input type="text" placeholder="Enter Phone Number" name="phonenumber" id="phonenumber" [(ngModel)]="this.model.phonenumber" 
+                    #phonenumber="ngModel" autocomplete="off" required>
+                <div *ngIf="phonenumber.errors && (phonenumber.dirty || phonenumber.touched) ||
+                    (careerForm.submitted && !phonenumber.valid )">
+                    <span [hidden]="!phonenumber.errors.required" class="spanerror">
+                        Required field cannot be left blank
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label for="email_ID"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email_ID" id="email_ID" [(ngModel)]="this.model.email_ID" 
+                    #email_ID="ngModel" autocomplete="off" required>
+                <div *ngIf="email_ID.errors && (email_ID.dirty || email_ID.touched) ||
+                    (careerForm.submitted && !email_ID.valid )">
+                    <span [hidden]="!email_ID.errors.required" class="spanerror">
+                        Required field cannot be left blank
+                    </span>
+                </div>
+            </div>
+
+            <button type="submit" class="registerbtn">Register</button>
+        </form>
+	</div>
+    <!--- Register Form End -->
+    
+</div>
+<!-- end content area -->
+
+<app-footer></app-footer>
