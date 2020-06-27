@@ -1,17 +1,15 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Enquiry } from '../_models/index';
-import { ServerURL } from './url';
 import { User } from '../_models/index';
-
+import { environment } from "src/environments/environment";
 
 @Injectable()
 export class EnquiryService {    
-    suburl:string;
 
-    private commonURL = this.globalsURL.serverURL;
+    private commonURL = environment.apiUrl;
     	
-    constructor(private http: HttpClient, private globalsURL: ServerURL) { }
+    constructor(private http: HttpClient) { }
 
     getAll() {
         return this.http.get<User[]>('/api/users');

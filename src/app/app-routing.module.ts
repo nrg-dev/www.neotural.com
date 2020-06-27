@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { DetailsheaderComponent } from './detailsheader/detailsheader.component';
 import { FooterComponent } from './footer/footer.component';
 import { CareerComponent } from './career/career.component';
+import { IndustriesComponent } from './industries/industries.component';
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'detailsheader', component: DetailsheaderComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'career', component: CareerComponent },
+  { path: 'industries', component: IndustriesComponent },
 
   { path: '**', redirectTo: '/home' }
 

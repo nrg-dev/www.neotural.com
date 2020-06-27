@@ -15,7 +15,7 @@
 	<div class="content_fullwidth">
         <form name="careerForm" (ngSubmit)="careerForm.form.valid && saveCareer()"
             #careerForm="ngForm" novalidate>
-            <h1>Enquiry Form</h1>
+            <h1>Career Form</h1>
             
             <div class="row" *ngIf="showMsg">
                 <div class="col-xs-12">
@@ -69,12 +69,55 @@
                 </div>
             </div>
 
-            <button type="submit" class="registerbtn">Register</button>
+            <div class="form-control">
+                <label for="qualification"><b>Qualification</b></label>
+                <input type="text" placeholder="Enter Qualification" name="qualification" [(ngModel)]="this.model.qualification" 
+                    #qualification="ngModel" autocomplete="off" required>
+                <div *ngIf="qualification.errors && (qualification.dirty || qualification.touched) ||
+                    (careerForm.submitted && !qualification.valid )">
+                    <span [hidden]="!qualification.errors.required" class="spanerror">
+                        Required field cannot be left blank
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label for="country"><b>Country</b></label>
+                <select name="country" id="country"  [(ngModel)]="this.model.country" 
+                    #country="ngModel" autocomplete="off">
+                    <option value="">Select Country</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Others">Others</option>
+                </select> 
+            </div>
+
+            <div class="form-control">
+                <label for="position"><b>Looking for Position</b></label>
+                <select name="position" id="position"  [(ngModel)]="this.model.position" 
+                    #position="ngModel" autocomplete="off">
+                    <option value="">Select Position</option>
+                    <option value="Developer">Developer</option>
+                    <option value="Sales Marketing">Sales Marketing</option>
+                </select> 
+            </div>
+
+            <div class="form-control">
+                <label for="primaryskill"><b>Primary Skills</b></label>
+                <input type="text" placeholder="Enter Skills" name="primaryskill" [(ngModel)]="this.model.primaryskill" 
+                    #primaryskill="ngModel" autocomplete="off" required>
+            </div>
+
+            <button type="submit" class="registerbtn">Submit</button>
         </form>
 	</div>
     <!--- Register Form End -->
     
 </div>
 <!-- end content area -->
+<br/><br/>
 
+<div class="clearfix mar_top4"></div>
+
+<!-- Footer Calling -->
 <app-footer></app-footer>

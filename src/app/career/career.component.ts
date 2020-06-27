@@ -33,6 +33,7 @@ export class CareerComponent implements OnInit {
         this.showMsg = true;
         this.showerrorMsg = false;
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        this.addEnquiryClose();
       },
       error => {
         this.showMsg = false;
@@ -40,6 +41,16 @@ export class CareerComponent implements OnInit {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     );
+  }
+
+  addEnquiryClose(){
+    this.model.name = '';
+    this.model.phonenumber = '';
+    this.model.email_ID = '';
+    this.model.qualification = '';
+    this.model.country = '';
+    this.model.position = '';
+    this.model.primaryskill = '';
   }
 
 }

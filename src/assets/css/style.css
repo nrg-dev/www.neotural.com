@@ -130,7 +130,7 @@ font-size:30px !important;
 #access .menu ul li a.active {
 	color: #fff;
 	padding: 32px 20px 32px 20px;
-	background-color: #425d6c;
+	/* background-color: #425d6c; */
 }
 #access .menu ul li a i {
 	margin-right: 5px;

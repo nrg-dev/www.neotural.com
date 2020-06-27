@@ -47,7 +47,7 @@ export class ContactComponent implements OnInit {
             this.showMsg = true;
             this.showerrorMsg = false;
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            this.addEmployeeClose();
+            this.addEnquiryClose();
           },
           error => {
             this.showMsg = false;
@@ -61,7 +61,7 @@ export class ContactComponent implements OnInit {
     
   }
 
-  addEmployeeClose(){
+  addEnquiryClose(){
     this.model.name = '';
     this.model.phonenumber = '';
     this.model.email_ID = '';
