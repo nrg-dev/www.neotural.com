@@ -37,6 +37,7 @@ export class ContactComponent implements OnInit {
   }
 
   saveEnquiry(){
+    console.log("SaveEnquiry...");
     if(this.model.email_ID != null || this.model.phonenumber != null){
       this.phonenumberoremail = false;
 
