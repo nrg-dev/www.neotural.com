@@ -21,18 +21,18 @@ export class EnquiryService {
 
     // Create new Enquiry
     saveEnquiry(enquiry: Enquiry) {
-        return this.http.post<Enquiry>(this.commonURL+'saveEnquiry', enquiry);
+        return this.http.post<Enquiry>(this.commonURL+'enquiry/saveEnquiry', enquiry);
     }
 
     getUserAndPass(){
-        return this.http.get<Enquiry>(this.commonURL+'getUserAndPass'); 
+        return this.http.get<Enquiry>(this.commonURL+'enquiry/getUserAndPass'); 
     }
 
     loadEnquiry(){
-       return this.http.get(this.commonURL+'loadEnquiry'); 
+       return this.http.get(this.commonURL+'enquiry/loadEnquiry'); 
     }
 
     saveCareer(enquiry: Enquiry){
-        return this.http.post<Enquiry>(this.commonURL+'saveCareer', enquiry);
+        return this.http.post<Enquiry>(this.commonURL+'enquiry/saveCareer', enquiry);
     }
 }
