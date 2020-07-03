@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Enquiry } from '../_models/index';
 import { EnquiryService } from '../_services/index';
 import { Router, ActivatedRoute } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-contact',
@@ -20,6 +21,7 @@ export class ContactComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private enquiryService: EnquiryService,
+    private SpinnerService: NgxSpinnerService
   ) { }
 
   ngOnInit(): void {
@@ -38,6 +40,7 @@ export class ContactComponent implements OnInit {
 
   saveEnquiry(){
     console.log("SaveEnquiry...");
+    this.SpinnerService.show();  
     if(this.model.email_ID != null || this.model.phonenumber != null){
       this.phonenumberoremail = false;
 
@@ -58,7 +61,9 @@ export class ContactComponent implements OnInit {
     }else{
       this.phonenumberoremail = true;
     }
-    
+    setTimeout(() => {
+      this.SpinnerService.hide();
+  }, 500);
   }
 
   addEnquiryClose(){

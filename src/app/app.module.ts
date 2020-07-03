@@ -9,8 +9,8 @@ import { AppComponent } from './app.component';
 
 import { EnquiryService } from './_services/index';
 import { AlertComponent } from './_directives/index';
-import { fakeBackendProvider } from './_helpers/index';
-import { JwtInterceptor } from './_helpers/index';
+//import { fakeBackendProvider } from './_helpers/index';
+//import { JwtInterceptor } from './_helpers/index';
 import { AuthGuard } from './_guards/index';
 
 import { AboutComponent } from './about/about.component';
@@ -25,6 +25,7 @@ import { DetailsheaderComponent } from './detailsheader/detailsheader.component'
 import { FooterComponent } from './footer/footer.component';
 import { CareerComponent } from './career/career.component';
 import { IndustriesComponent } from './industries/industries.component';
+import { NgxSpinnerModule } from "ngx-spinner";  
 
 @NgModule({
   declarations: [
@@ -50,18 +51,20 @@ import { IndustriesComponent } from './industries/industries.component';
     HttpClientModule,
     CommonModule,
     FormsModule,
+    NgxSpinnerModule, 
+
   ],
   providers: [
     AuthGuard,
     EnquiryService,
 
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: JwtInterceptor,
-      multi: true
-    },
+    //{
+     // provide: HTTP_INTERCEPTORS,
+      //useClass: JwtInterceptor,
+      //multi: true
+    //},
     
-    fakeBackendProvider
+    //fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })
