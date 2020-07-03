@@ -13,17 +13,24 @@
   
 	<!--- Register Form Start -->
 	<div class="content_fullwidth">
+
+        <div class="row" *ngIf="showMsg" style="height: 300px;">
+            <div class="col-xs-12">
+                <p class="alert alert-success">
+                    Hello Job Seeker,
+                    Thank You for applying job.Our HR Team will review your profile and get back to you.
+                    Please reach out at jobseeker@neotural.com
+    
+                </p>
+            </div>
+        </div>
+
+        <div *ngIf="div2">
         <form name="careerForm" (ngSubmit)="careerForm.form.valid && saveCareer()"
             #careerForm="ngForm" novalidate>
             <h1>Career Form</h1>
             
-            <div class="row" *ngIf="showMsg">
-                <div class="col-xs-12">
-                    <p class="alert alert-success">
-                        Thank You for giving enquiry.We will revert you wiithin 24 hours.
-                    </p>
-                </div>
-            </div>
+         
 
             <div class="row" *ngIf="showerrorMsg">
                 <div class="col-xs-12">
@@ -110,6 +117,7 @@
 
             <button type="submit" class="registerbtn">Submit</button>
         </form>
+    </div>
 	</div>
     <!--- Register Form End -->
     
@@ -120,4 +128,3 @@
 <div class="clearfix mar_top4"></div>
 
 <!-- Footer Calling -->
-<app-footer></app-footer>

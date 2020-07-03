@@ -14,6 +14,7 @@ export class ContactComponent implements OnInit {
   model: any = {};
   showMsg: boolean = false;
   showerrorMsg: boolean = false;
+  div1: boolean = true;
   enquiry:Enquiry;
   public phonenumberoremail = false;
 
@@ -47,10 +48,10 @@ export class ContactComponent implements OnInit {
       this.enquiryService.saveEnquiry(this.model) 
         .subscribe(
           data => {
-            this.showMsg = true;
             this.showerrorMsg = false;
             window.scrollTo({ top: 0, behavior: 'smooth' });
             this.addEnquiryClose();
+            this.div1 = false;
           },
           error => {
             this.showMsg = false;
@@ -63,6 +64,7 @@ export class ContactComponent implements OnInit {
     }
     setTimeout(() => {
       this.SpinnerService.hide();
+      this.showMsg = true;
   }, 500);
   }
 

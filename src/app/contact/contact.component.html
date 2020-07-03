@@ -12,17 +12,26 @@
   
 	<!--- Register Form Start -->
 	<div class="content_fullwidth">
+
+        <div class="row" *ngIf="showMsg" style="height: 300px;">
+            <div class="col-xs-12 alert alert-success">
+                <h5 >
+                    Thank You for giving enquiry.We will revert you wiithin 24 hours.
+                </h5>
+                <h5>
+                    Please reach out at contactus@neotural.com
+
+                </h5>
+
+            </div>
+        </div>
+
+        <div *ngIf="div1">
         <form name="enquiryForm" (ngSubmit)="enquiryForm.form.valid && saveEnquiry()"
             #enquiryForm="ngForm" novalidate>
             <h1>Enquiry Form</h1>
             
-            <div class="row" *ngIf="showMsg">
-                <div class="col-xs-12">
-                    <p class="alert alert-success">
-                        Thank You for giving enquiry.We will revert you wiithin 24 hours.
-                    </p>
-                </div>
-            </div>
+        
 
             <div class="row" *ngIf="showerrorMsg">
                 <div class="col-xs-12">
@@ -104,6 +113,7 @@
             
             <button type="submit" class="registerbtn">Submit</button>
         </form>
+    </div>
 	</div>
 	<!--- Register Form End -->
 	
@@ -131,5 +141,4 @@
 <div class="clearfix mar_top4"></div>
 
 <!-- Footer Calling -->
-<app-footer></app-footer>
 
