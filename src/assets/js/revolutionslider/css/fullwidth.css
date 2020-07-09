@@ -31,10 +31,11 @@ website:   	http://www.themepunch.com
 	}
 	.fullwidthbanner-container .fullwidthbanner{
 		width:100% !important;
+		/* height: 100% !important; */
 		position:relative;
 		padding:0;
 		margin-top: 0px;
-		max-height: 500px !important;
+		/* max-height: 500px !important; */
 		overflow:hidden;
 	}
 	
